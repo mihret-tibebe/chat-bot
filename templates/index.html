@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='/styles/style.css') }}">
+
+</head>
+
+<body>
+
+	<div class="chatbot-container">
+		<div class="chat" id="chat">
+			<div class="bot-message">Hello! Please select your gender.</div>
+		</div>
+
+		<div class="input-container">
+			<div class="selected-symptoms" id="selectedSymptoms"></div>
+			<!-- <button class="symptom-button" onclick="sendMessage()">Send</button> -->
+			<div class="available-symptoms" id="availableSymptoms">
+
+				<button class="symptom-button" id="male" onclick="askSymptom('male')">Male</button>
+				<button class="symptom-button" id="female" onclick="askSymptom('female')">Female</button>
+
+			
+			</div>
+		</div>
+
+	</div>
+
+	<script src="{{ url_for('static', filename='/scripts/script.js') }}"></script>
+
+</body>
+
+</html>
