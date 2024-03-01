@@ -1,17 +1,18 @@
-from flask import Flask, request, jsonify, render_template
-from inference_engine import run_expert_system
-from config import HOST, PORT, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
-from models import db, Prediction, Syndrom
+from flask import Flask, render_template
+# from inference_engine import run_expert_system
+# from config import HOST, PORT, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
+# from models import db, Prediction, Syndrom
 
-app = Flask(__name__, static_folder='static')
+# app = Flask(__name__, static_folder='static')
+app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = SQLALCHEMY_TRACK_MODIFICATIONS
+# app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = SQLALCHEMY_TRACK_MODIFICATIONS
 
-db.init_app(app)
+# db.init_app(app)
 
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     db.create_all()
 
 @app.route('/')
 def index():
