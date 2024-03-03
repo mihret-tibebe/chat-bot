@@ -3,7 +3,7 @@ from flask import Flask, render_template
 # from config import HOST, PORT, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
 # from models import db, Prediction, Syndrom
 
-# app = Flask(__name__, static_folder='static')
+app = Flask(__name__, static_folder='static')
 app = Flask(__name__)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
