@@ -1,0 +1,4 @@
+[env.production]
+port = "$PORT"
+command = "gunicorn main:app"
+staticBuildDir = "static"
