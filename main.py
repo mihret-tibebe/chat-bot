@@ -1,6 +1,6 @@
 # from flask import Flask, render_template
 from flask import Flask, request, jsonify, render_template
-# from inference_engine import run_expert_system
+from inference_engine import run_expert_system
 # from config import HOST, PORT, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
 # from models import db, Prediction, Syndrom
 
