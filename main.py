@@ -124,7 +124,7 @@ def predict():
                     response[key] = {'result': result.result}
             else:
                 response[key] = {'result': result}
-        saveToDB(symptoms , response )
+        # saveToDB(symptoms , response )
         return jsonify(response)
 
     except Exception as e:
