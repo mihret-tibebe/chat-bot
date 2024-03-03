@@ -117,7 +117,7 @@ async function loopThroughSymptoms(symptomList) {
 	var count = 0;
 
 	for (const key in symptomList) {
-		var message = '<strong>Bot:</strong> ' + "Do you have " + symptomList[key].symptom;
+		var message = '<strong>Bot:</strong> ' + "Do you have " + symptomList[key].symptom + "?";
 		var selectedValue = await conversationBuilder(message);
 
 		if (selectedValue == "Yes") {
@@ -243,8 +243,6 @@ async function loopThroughSymptoms(symptomList) {
 
 		chatContainer.scrollTop = chatContainer.scrollHeight;
 
-		count += 1;
-		console.log("****" + count)
 	}
 
 	return Promise.resolve();
@@ -297,7 +295,7 @@ function waitForUserInput(buttons) {
 	});
 }
 
-// end start of questioning function
+// start of questioning function
 
 // *5
 
@@ -345,7 +343,8 @@ function handleBackendResponse(data) {
 	var chatContainer = document.getElementById('chat');
 	message1 = "<strong>Bot:</strong> ";
 	message2 = "";
-	message = "";
+	var botMessage = document.createElement('div');
+	botMessage.className = 'bot-message';
 
 	for (const syndrome in data) {
 		let other
@@ -357,24 +356,27 @@ function handleBackendResponse(data) {
 			}
 
 			if (result.toLowerCase() != 'unknown') {
-				var botMessage = document.createElement('div');
-				botMessage.className = 'bot-message';
+				// var botMessage = document.createElement('div');
+				// botMessage.className = 'bot-message';
 
 				if (other) {
 					message2 = syndrome + " " + result + " and " + other;
-					message = message1 + message2;
+					message1 = message1 + message2;
 					// botMessage.innerHTML = '<strong>Bot:</strong> '+ syndrome + " " + result + " and " + other;
 				}
 				else
-					message2 = syndrome + " " + result + " and " + other;
-					message = message1 + message2;
+					message2 = syndrome + " " + result;
+					message1 = message1 + message2;
 					// botMessage.innerHTML = '<strong>Bot:</strong> '+ syndrome + " " + result;
 
-				botMessage.innerHTML = message;
-				chatContainer.appendChild(botMessage);
+				// botMessage.innerHTML = message;
+				// chatContainer.appendChild(botMessage);
 			}
 		}
 	}
+
+	botMessage.innerHTML = message1;
+	chatContainer.appendChild(botMessage);
 
 	// Clear selected symptoms
 	document.getElementById('selectedSymptoms').innerHTML = '';
