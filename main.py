@@ -57,8 +57,10 @@ def saveToDB(symptoms , response):
     symptoms.update(dic)
     # prediction_instance = Prediction(**symptoms)
     prediction_instance = Prediction(**symptoms_modified)
-    db.session.add(prediction_instance)
-    db.session.commit()
+# ///////////////////////////////////////////////
+    # db.session.add(prediction_instance)
+    # db.session.commit()
+# ///////////////////////////////////////////////
     # print("done "* 50)
     
     
