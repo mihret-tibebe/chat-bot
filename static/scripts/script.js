@@ -39,13 +39,13 @@ async function askSymptom(gender = '') {
 			"vaginal_itching": { symptom: "Vaginal itching", value: "" },
 			"pain_during_sex": { symptom: "Dyspareunia (pain during sex)", value: "" },
 			"genital_sore": { symptom: "Genital sore", value: "" },
-			"inguinal_swelling": { symptom: "Inguinal swelling", value: "" },
 			"pain_below_umbilicus": { symptom: "Lower abdominal pain, Pain below umblicus", value: "" },
 			"fever": { symptom: "Fever", value: "" },
 			"vaginal_discharge": { symptom: "Vaginal discharge", value: "" },
 			"missed_menstrual_period": { symptom: "Missed menstrual Period", value: "" },
 			"vaginal_bleeding": { symptom: "Vaginal bleeding", value: "" },
 			"painful_inguinal_lymph_node_or_swelling_over_the_groin": { symptom: "Painful inguinal lymph node or swelling over the groin", value: "" },
+			// "inguinal_swelling": { symptom: "Inguinal swelling", value: "" },
 			"pus_discharge_from_swelling": { symptom: "Pus discharge from swelling", value: "" },
 			"skin_colored_raised_bumps_with_rough_surface_single_or_multiple_on_genital_area": { symptom: "Skin colored raised bumps with rough surface single or multiple on genital area", value: "" },
 			"skin_lesions_on_between_fingerswrist_genital_area_buttock": { symptom: "Skin lesions between fingerswrist genital area buttock", value: "" },
@@ -59,6 +59,8 @@ async function askSymptom(gender = '') {
 			"similar_complaint_in_the_family_or_vicinity": { symptom: "Similar complaint in the family or vicinity", value: "" },
 			"itching_over_the_thighs_axilla_eyelid": { symptom: "Itching over the thighs axilla eyelid", value: "" }
 		};
+
+		// symptomList[inguinal_swelling] = symptomList[painful_inguinal_lymph_node_or_swelling_over_the_groin].symptom
 
 		loopThroughSymptoms(symptomList)
 			.then(() => {
@@ -105,6 +107,8 @@ async function askSymptom(gender = '') {
 				console.error('Error in loopThroughSymptoms:', error);
 			});
 	}
+
+	// console.log("%%%%%%%%%%%%%%% ", symptomList[inguinal_swelling])
 
 }
 
@@ -334,6 +338,19 @@ function sendMessage(symptomList, sex) {
 }
 
 
+// convert result
+function convertResult(result) {
+	if (result.toLowerCase() == 'vl'){
+		return "Very Likely"
+	}
+	else if (result.toLowerCase() == 'l'){
+		return "Likely"
+	}
+	else if (result.toLowerCase() == 'm') {
+		return "Moderatly"
+	}
+}
+
 // display predection returened from backend
 
 // function handleBackendResponse(data, symptomsObject) {
@@ -345,7 +362,8 @@ function handleBackendResponse(data) {
 	message2 = "";
 	var botMessage = document.createElement('div');
 	botMessage.className = 'bot-message';
-
+	
+	countSyndrom = 0;
 	for (const syndrome in data) {
 		let other
 		if (data.hasOwnProperty(syndrome)) {
@@ -355,17 +373,21 @@ function handleBackendResponse(data) {
 				other = data[syndrome].other;
 			}
 
-			if (result.toLowerCase() != 'unknown') {
+
+			if (result.toLowerCase() != 'unknown' && result.toLowerCase() != 'ul' && result.toLowerCase() != 'm') {
 				// var botMessage = document.createElement('div');
 				// botMessage.className = 'bot-message';
 
+				result1 = convertResult(result);
+
+				countSyndrom += 1;
 				if (other) {
-					message2 = syndrome + " " + result + " and " + other;
+					message2 = "The prediction result for " + syndrome + " " + "is " + result1 + " and " + other +". ";
 					message1 = message1 + message2;
 					// botMessage.innerHTML = '<strong>Bot:</strong> '+ syndrome + " " + result + " and " + other;
 				}
 				else
-					message2 = syndrome + " " + result;
+					message2 = "The prediction result for " + syndrome + " " + "is " + result1 + ". ";
 					message1 = message1 + message2;
 					// botMessage.innerHTML = '<strong>Bot:</strong> '+ syndrome + " " + result;
 
@@ -373,6 +395,11 @@ function handleBackendResponse(data) {
 				// chatContainer.appendChild(botMessage);
 			}
 		}
+	}
+
+	if (countSyndrom == 0) {
+		message2 = "You don't have any of the major STI syndroms. For better result please visit your nearest health care center."
+		message1 = message1 + message2;
 	}
 
 	botMessage.innerHTML = message1;
