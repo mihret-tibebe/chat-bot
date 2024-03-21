@@ -1,19 +1,3 @@
-// *6
-
-// *2
-
-// *3
-
-// *4
-
-// Define handleButtonClick function outside the loop
-// function handleButtonClick(choice, yesButton, noButton) {
-// 	// Remove event listeners from buttons
-// 	yesButton.removeEventListener("click", yesButtonClickHandler);
-// 	noButton.removeEventListener("click", noButtonClickHandler);
-// 	// Resolve the Promise with the user's choice
-// 	return choice;
-// }
 
 function handleUserChoice(symptom, choice) {
 	console.log(`User selected ${choice} for ${symptom}`);
@@ -108,8 +92,6 @@ async function askSymptom(gender = '') {
 			});
 	}
 
-	// console.log("%%%%%%%%%%%%%%% ", symptomList[inguinal_swelling])
-
 }
 
 // for loop handler
@@ -121,14 +103,14 @@ async function loopThroughSymptoms(symptomList) {
 	var count = 0;
 
 	for (const key in symptomList) {
-		var message = '<strong>Bot:</strong> ' + "Do you have " + symptomList[key].symptom + "?";
+		var message = '<strong>Bot</strong> <br/>' + "Do you have " + symptomList[key].symptom + "?";
 		var selectedValue = await conversationBuilder(message);
 
 		if (selectedValue == "Yes") {
 			if (key == "unusual_discharge") {
 				let detailsValue = [];
 
-				var message = '<strong>Bot:</strong> ' + "Is it unusual color such as greenish or yellowish?";
+				var message = '<strong>Bot</strong> <br/>' + "Is it unusual color such as greenish or yellowish?";
 				var selectedValue2 = await conversationBuilder(message);
 				if (selectedValue2 == "Yes") {
 					detailsValue.push(1);
@@ -137,7 +119,7 @@ async function loopThroughSymptoms(symptomList) {
 					detailsValue.push(0);
 				}
 
-				message = '<strong>Bot:</strong> ' + "Does it has bad odor?";
+				message = '<strong>Bot</strong> <br/>' + "Does it has bad odor?";
 				selectedValue2 = await conversationBuilder(message);
 				if (selectedValue2 == "Yes") {
 					detailsValue.push(1);
@@ -166,7 +148,7 @@ async function loopThroughSymptoms(symptomList) {
 			else if (key == "urethral_discharge") {
 				let detailsValue = [];
 
-				var message = '<strong>Bot:</strong> ' + "Is it unusual color such as greenish or yellowish?";
+				var message = '<strong>Bot</strong> <br/>' + "Is it unusual color such as greenish or yellowish?";
 				var selectedValue2 = await conversationBuilder(message);
 				if (selectedValue2 == "Yes") {
 					detailsValue.push(1);
@@ -175,7 +157,7 @@ async function loopThroughSymptoms(symptomList) {
 					detailsValue.push(0);
 				}
 
-				message = '<strong>Bot:</strong> ' + "Does it has bad odor?";
+				message = '<strong>Bot</strong> <br/>' + "Does it has bad odor?";
 				selectedValue2 = await conversationBuilder(message);
 				if (selectedValue2 == "Yes") {
 					detailsValue.push(1);
@@ -204,7 +186,7 @@ async function loopThroughSymptoms(symptomList) {
 			else if (key == "scrotal_pain") {
 				let detailsValue = [];
 
-				var message = '<strong>Bot:</strong> ' + "Does the pain past less than 6 weeks?";
+				var message = '<strong>Bot</strong> <br/>' + "Does the pain past less than 6 weeks?";
 				var selectedValue2 = await conversationBuilder(message);
 				if (selectedValue2 == "Yes") {
 					detailsValue.push(1);
@@ -213,7 +195,7 @@ async function loopThroughSymptoms(symptomList) {
 					detailsValue.push(0);
 				}
 
-				message = '<strong>Bot:</strong> ' + "Is the onset of the pain sudden or gradual, if it is sudden say Yes, if Gradual say No?";
+				message = '<strong>Bot</strong> <br/>' + "Is the onset of the pain sudden or gradual, if it is sudden say Yes, if Gradual say No?";
 				selectedValue2 = await conversationBuilder(message);
 				if (selectedValue2 == "Yes") {
 					detailsValue.push(1);
@@ -280,7 +262,7 @@ async function conversationBuilder (message) {
 	container.appendChild(noButton);
 
 	const selectedValue = await waitForUserInput([yesButton, noButton]);
-	userMessage.innerHTML = '<strong>User:</strong> ' + selectedValue;
+	userMessage.innerHTML = '<strong>User</strong> <br/>' + selectedValue;
 	chatContainer.appendChild(userMessage);
 
 	container.removeChild(yesButton);
@@ -298,12 +280,6 @@ function waitForUserInput(buttons) {
 		});
 	});
 }
-
-// start of questioning function
-
-// *5
-
-// end of get user choice (yes/ no)
 
 
 function sendMessage(symptomList, sex) {
@@ -358,14 +334,17 @@ function handleBackendResponse(data) {
 	console.log('Handling backend response');
 
 	var chatContainer = document.getElementById('chat');
-	message1 = "<strong>Bot:</strong> ";
+	message1 = "<strong>Bot</strong> <br>";
 	message2 = "";
 	var botMessage = document.createElement('div');
 	botMessage.className = 'bot-message';
 	
 	countSyndrom = 0;
+	let resultlList = [];
 	for (const syndrome in data) {
-		let other
+		let resultItem = {};
+		let other;
+
 		if (data.hasOwnProperty(syndrome)) {
 			const result = data[syndrome].result;
 			if ('other' in data[syndrome]) {
@@ -373,29 +352,68 @@ function handleBackendResponse(data) {
 				other = data[syndrome].other;
 			}
 
-
 			if (result.toLowerCase() != 'unknown' && result.toLowerCase() != 'ul' && result.toLowerCase() != 'm') {
-				// var botMessage = document.createElement('div');
-				// botMessage.className = 'bot-message';
 
 				result1 = convertResult(result);
 
 				countSyndrom += 1;
 				if (other) {
-					message2 = "The prediction result for " + syndrome + " " + "is " + result1 + " and " + other +". ";
-					message1 = message1 + message2;
-					// botMessage.innerHTML = '<strong>Bot:</strong> '+ syndrome + " " + result + " and " + other;
-				}
-				else
-					message2 = "The prediction result for " + syndrome + " " + "is " + result1 + ". ";
-					message1 = message1 + message2;
-					// botMessage.innerHTML = '<strong>Bot:</strong> '+ syndrome + " " + result;
+					resultItem.syndromName = syndrome;
+					resultItem.result = result1;
+					resultItem.other = other;
 
-				// botMessage.innerHTML = message;
-				// chatContainer.appendChild(botMessage);
+					if (result == 'VL')
+					{
+						resultItem.priority = 1;
+					}
+					else if (result == 'L') {
+						resultItem.priority = 2;
+					}
+					else if (result == 'M') {
+						resultItem.priority = 3;
+					}
+					else {
+						resultItem.priority = 0;
+					}
+
+					resultlList.push(resultItem);
+
+				}
+				else{
+					resultItem.syndromName = syndrome;
+					resultItem.result = result1;
+					console.log(`%%%%%%%%%%%% ${result}`);
+					if (result == "VL") {
+						resultItem.priority = 1;
+					}
+					else if (result == "L") {
+						resultItem.priority = 2;
+					}
+					else if (result == "M") {
+						resultItem.priority = 3;
+					}
+					else {
+						resultItem.priority = 0;
+					}
+
+					resultlList.push(resultItem);
+				}
+				console.log("$$$$$$$$$$$$$$$" +resultItem.syndromName + " " + resultItem.result)
+
 			}
 		}
 	}
+	console.log(resultlList);
+
+	// sort resultList using priority
+	resultlList.sort((a, b) => a.priority - b.priority);
+	// console.log(resultlList);
+
+	resultlList.forEach((resultItem) => {
+		// console.log(resultItem.x);
+		message2 = `The prediction result for ${resultItem.syndromName} is ${resultItem.result}.<br/>`;
+		message1 = message1 + message2;
+	});
 
 	if (countSyndrom == 0) {
 		message2 = "You don't have any of the major STI syndroms. For better result please visit your nearest health care center."

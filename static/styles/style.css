@@ -1,0 +1,190 @@
+body {
+
+	/* background-image: url('../img/AI\ for\ Devt.png');
+	url('../img/aastu.png'), 
+	url('../img/Hash.png'), 
+	url('../img/IDI & Makerer.png'), 
+	url('../img/IDRC Canada.png'), 
+	url('../img/Makerer AI Lab.png'), 
+	url('../img/Sida.png'), 
+	url('../img/Sunbird AI.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; */
+
+	font-family: 'Arial', sans-serif;
+	background-color: #fcfcfc;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+/* ///////////////////////// */
+
+.chat {
+	padding: 20px;
+	overflow-y: auto;
+	max-height: calc(100% - 70px);
+	/* max-height: 300px; */
+}
+
+.input-container {
+	padding: 10px;
+	background-color: #f2f2f2;
+}
+
+.logo {
+	bottom: 5px;
+	width: 10px;
+	height: 10px;
+	all: unset;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 30px;
+	margin-inline: 0;
+	gap: 15px;
+}
+
+img {
+	width: 5em;
+	height: 4.8em;
+	display: block;
+	margin: 0.3em;
+	/* height: auto; */
+
+}
+
+.footer {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 20px;
+}
+
+.user-message {
+	background-color: #e0f7fa;
+	color: #000;
+	text-align: right;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	width: fit-content;
+}
+
+.bot-message {
+	background-color: #c8e6c9;
+	color: #000;
+	text-align: left;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	width: fit-content;
+}
+
+.selected-symptoms {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+}
+
+.available-symptoms {
+	display: flex;
+	display: block;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+}
+
+.symptom-button {
+	/* background-color: #4CAF50; */
+	background-color: #4397c7;
+	color: black;
+	border: none;
+	padding: 8px 15px;
+	border-radius: 4px;
+	cursor: pointer;
+	margin: 5px;
+	/* outline: none; */
+	vertical-align: bottom;
+}
+
+.input-container button {
+	/* background-color: #4CAF50; */
+	background-color: #4397c7;
+	color: black;
+	border: none;
+	padding: 8px 15px;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 5px;
+	outline: none;
+	vertical-align: bottom;
+}
+
+.main-div {
+	display: flex;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 10em;
+	padding-top: 1em;
+	max-height:min-content;
+	width: 90%;
+	overflow: scroll;
+	border: 1px solid red;
+
+}
+
+.background-logos {
+	/* display: flex; */
+	flex-direction: column;
+	padding-top: 50px;
+}
+
+.bg-left {
+	flex: 1;
+	margin: 7em;
+	margin-top: 1em;
+	width: 10%;
+	padding-top: -2em;
+}
+
+.bg-right {
+	flex: 1;
+	margin: 7em;
+	margin-top: 1em;
+	width: 10%;
+	padding-top: -2em;
+}
+
+.logo img {
+	width: 20em;
+	height: 6em;
+	margin-bottom: 2em;
+	opacity: 0.3;
+}
+
+
+
+.chatbot-container {
+	/* flex: 1; */
+	/* margin-top: 1em;
+	margin-bottom: 1em; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	border-radius: 8px;
+	max-width: 20em;
+	width: 80%;
+	padding-left: 4px;
+	padding-top: 5px;
+	/* height: 100%; */
+	/* max-height: min-content; */
+	/* overflow: scroll; */
+}
+
