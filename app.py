@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 from inference_engine import run_expert_system
 from config import HOST, PORT, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
-from models import db, Prediction, Syndrom
+# from models import db, Prediction, Syndrom
 
 app = Flask(__name__, static_folder='static')
 
@@ -29,10 +29,10 @@ def index():
 
 
 def get_syndrom_id(key):
-    syndrom = Syndrom.query.filter_by(symptom=key).first()
-    if syndrom:
-        return str(syndrom.id)
-    return None
+    # syndrom = Syndrom.query.filter_by(symptom=key).first()
+    # if syndrom:
+    #     return str(syndrom.id)
+    # return None
 
 def saveToDB(symptoms , response):
     # print(symptoms)
