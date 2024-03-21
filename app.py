@@ -22,7 +22,7 @@ def index():
 def chatbot_page():
     return render_template('chatbot.html')
 
-@app.route('/chatbot-page')
+@app.route('/chatbot')
 def chatbot():
 	return redirect(url_for("chatbot"))
 
