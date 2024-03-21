@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='/styles/style_test.css') }}">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='/styles/style.css') }}">
+
+</head>
+
+<body>
+	<div class="sidebar">
+		<a href="/" class="sidebar-item">
+			<i class="bi bi-house-door-fill me-2"></i> Home
+		</a>
+		<a href="/#about" class="sidebar-item">
+			<i class="bi bi-info-circle-fill me-2"></i> About
+		</a>
+		<a href="/#std" class="sidebar-item">
+			<i class="bi bi-file-medical me-2"></i> STDs
+		</a>
+		<a href="/#chatbot" class="sidebar-item">
+			<i class="bi bi-chat-left-dots-fill me-2"></i> Chatbot
+		</a>
+		<a href="#suggestion" class="sidebar-item">
+			<i class="bi bi-hospital me-2"></i> Health Center and Hospitals
+		</a>
+		<a href="/" class="sidebar-item">
+			<i class="bi bi-heart-fill me-2"></i> Health Center and Hospitals
+		</a>
+		<a href="/#resources" class="sidebar-item">
+			<i class="bi bi-book-fill me-2"></i> Resources
+		</a>
+		<a href="/#feedback" class="sidebar-item">
+			<i class="bi bi-chat-dots-fill me-2"></i> Feedback
+		</a>
+	</div>
+
+
+	<div class="main-div">
+		<!-- BACKGROUND -->
+		<!-- <div class="background-logos"> -->
+			<div class="bg-left">
+				<div class="logo">
+					<img src="{{ url_for('static', filename='/img/aastu.png') }}" alt="aastu">
+				</div>
+
+				<div class="logo">
+					<img src="{{ url_for('static', filename='/img/AI for Devt.png') }}" alt="ai for dev't Africa">
+				</div>
+
+				<div class="logo">
+					<img src="{{ url_for('static', filename='/img/Hash.png') }}" alt="hash">
+				</div>
+
+				<div class="logo">
+					<img src="{{ url_for('static', filename='/img/IDI & Makerer.png') }}" alt="IDI & Makerer">
+				</div>
+			</div>
+
+			<!-- CHATBOT -->
+			<div class="chatbot-container">
+				<div class="chat" id="chat">
+					<div class="bot-message">Hello! Please select your gender.</div>
+				</div>
+			
+				<div class="input-container">
+					<div class="selected-symptoms" id="selectedSymptoms"></div>
+					<!-- <button class="symptom-button" onclick="sendMessage()">Send</button> -->
+					<div class="available-symptoms" id="availableSymptoms">
+			
+						<button class="symptom-button" id="male" onclick="askSymptom('male')">Male</button>
+						<button class="symptom-button" id="female" onclick="askSymptom('female')">Female</button>
+					</div>
+				</div>
+			
+			</div>
+			<!-- END OF CHATBOT -->
+
+			<div class="bg-right">
+				<div class="logo">
+					<img src="{{ url_for('static', filename='/img/IDRC Canada.png') }}" alt="IDRC Canada">
+				</div>
+
+				<div class="logo">
+					<img src="{{ url_for('static', filename='/img/Makerer AI Lab.png') }}" alt="Makerer AI Lab">
+				</div>
+
+				<div class="logo">
+					<img src="{{ url_for('static', filename='/img/Sida.png') }}" alt="Sida">
+				</div>
+
+				<div class="logo">
+					<img src="{{ url_for('static', filename='/img/Sunbird AI.png') }}" alt="Sunbird AI">
+				</div>
+			</div>
+
+		<!-- </div> -->
+		<!-- END OF BACKGROUND -->
+
+		
+
+	</div>
+
+
+	<script src="{{ url_for('static', filename='/scripts/script.js') }}"></script>
+
+</body>
+
+
+</html>
