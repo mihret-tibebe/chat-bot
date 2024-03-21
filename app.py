@@ -5,13 +5,17 @@ from models import db, Prediction, Syndrom
 
 app = Flask(__name__, static_folder='static')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = SQLALCHEMY_TRACK_MODIFICATIONS
+# app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = SQLALCHEMY_TRACK_MODIFICATIONS
 
-db.init_app(app)
+# db.init_app(app)
 
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     db.create_all()
+
+@app.route('/chatbot')
+def chatbot():
+    return render_template('chatbot.html')
 
 @app.route('/')
 def index():
@@ -21,9 +25,7 @@ def index():
 # def about():
 #     return render_template('about.html')
 
-@app.route('/chatbot')
-def chatbot():
-    return render_template('chatbot.html')
+
 
 
 def get_syndrom_id(key):
@@ -64,8 +66,8 @@ def saveToDB(symptoms , response):
     symptoms.update(dic)
     # prediction_instance = Prediction(**symptoms)
     prediction_instance = Prediction(**symptoms_modified)
-    db.session.add(prediction_instance)
-    db.session.commit()
+    # db.session.add(prediction_instance)
+    # db.session.commit()
     # print("done "* 50)
     
     
@@ -128,7 +130,7 @@ def predict():
                     response[key] = {'result': result.result}
             else:
                 response[key] = {'result': result}
-        saveToDB(symptoms , response )
+        # saveToDB(symptoms , response )
         return jsonify(response)
 
     except Exception as e:
