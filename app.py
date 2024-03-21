@@ -13,13 +13,18 @@ app = Flask(__name__, static_folder='static')
 # with app.app_context():
 #     db.create_all()
 
-@app.route('/chatbot')
-def chatbot():
-    return render_template('chatbot.html')
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/chatbot-page')
+def chatbot_page():
+    return render_template('chatbot.html')
+
+@app.route('/chatbot-page')
+def chatbot():
+	return redirect('/chatbot')
 
 # @app.route('/about')
 # def about():
