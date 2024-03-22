@@ -14,7 +14,7 @@ app = Flask(__name__, static_folder='static')
 #     db.create_all()
 
 
-@app.route('/')
+@app.route('/test')
 def index():
 	print("$$$$$$$$$$ index")
     return render_template('index.html')
@@ -24,19 +24,11 @@ def index():
 # 	print("$$$$$$$$$$ chatbot_page")
 #     return render_template('chatbot.html')
 
-@app.route('/chatbot', methods=['GET'])
+@app.route('/')
 def chatbot():
 	print("$$$$$$$$$$ chatbot")
 	# return redirect(url_for("chatbot_page"))
     return render_template('chatbot.html')
-
-
-# @app.route('/about')
-# def about():
-#     return render_template('about.html')
-
-
-
 
 def get_syndrom_id(key):
     # syndrom = Syndrom.query.filter_by(symptom=key).first()
