@@ -24,7 +24,7 @@ def chatbot_page():
 
 @app.route('/chatbot')
 def chatbot():
-	return redirect(url_for("chatbot-page"))
+	return redirect(url_for("chatbot_page"))
 
 # @app.route('/about')
 # def about():
