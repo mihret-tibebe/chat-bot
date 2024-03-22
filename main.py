@@ -19,6 +19,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/chatbot')
+def chatbot():
+    return render_template('chatbot.html')
+
 
 def get_syndrom_id(key):
     syndrom = Syndrom.query.filter_by(symptom=key).first()
