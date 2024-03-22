@@ -19,7 +19,7 @@ def index():
 	print("$$$$$$$$$$ index")
     return render_template('index.html')
 
-@app.route('/chatbot-page')
+# @app.route('/chatbot-page')
 def chatbot_page():
 	print("$$$$$$$$$$ chatbot_page")
     return render_template('chatbot.html')
