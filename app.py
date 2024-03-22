@@ -15,8 +15,7 @@ app = Flask(__name__, static_folder='static')
 
 @app.route('/')
 def chatbot():
-	print("$$$$$$$$$$ chatbot")
-	# return redirect(url_for("chatbot_page"))
+    print("$$$$$$$$$$ chatbot")
     return render_template('chatbot.html')
 
 # @app.route('/test')
@@ -30,7 +29,7 @@ def chatbot():
 #     return render_template('chatbot.html')
 
 
-def get_syndrom_id(key):
+# def get_syndrom_id(key):
     # syndrom = Syndrom.query.filter_by(symptom=key).first()
     # if syndrom:
     #     return str(syndrom.id)
