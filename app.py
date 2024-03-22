@@ -13,22 +13,22 @@ app = Flask(__name__, static_folder='static')
 # with app.app_context():
 #     db.create_all()
 
+@app.route('/')
+def chatbot():
+	print("$$$$$$$$$$ chatbot")
+	# return redirect(url_for("chatbot_page"))
+    return render_template('chatbot.html')
 
-@app.route('/test')
-def index():
-	print("$$$$$$$$$$ index")
-    return render_template('index.html')
+# @app.route('/test')
+# def index():
+# 	print("$$$$$$$$$$ index")
+#     return render_template('index.html')
 
 # @app.route('/chatbot-page')
 # def chatbot_page():
 # 	print("$$$$$$$$$$ chatbot_page")
 #     return render_template('chatbot.html')
 
-@app.route('/')
-def chatbot():
-	print("$$$$$$$$$$ chatbot")
-	# return redirect(url_for("chatbot_page"))
-    return render_template('chatbot.html')
 
 def get_syndrom_id(key):
     # syndrom = Syndrom.query.filter_by(symptom=key).first()
