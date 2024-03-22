@@ -20,14 +20,16 @@ def index():
     return render_template('index.html')
 
 # @app.route('/chatbot-page')
-def chatbot_page():
-	print("$$$$$$$$$$ chatbot_page")
-    return render_template('chatbot.html')
+# def chatbot_page():
+# 	print("$$$$$$$$$$ chatbot_page")
+#     return render_template('chatbot.html')
 
-@app.route('/chatbot')
+@app.route('/chatbot', methods=['GET'])
 def chatbot():
 	print("$$$$$$$$$$ chatbot")
-	return redirect(url_for("chatbot_page"))
+	# return redirect(url_for("chatbot_page"))
+    return render_template('chatbot.html')
+
 
 # @app.route('/about')
 # def about():
