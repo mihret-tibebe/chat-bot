@@ -1,17 +1,4 @@
 body {
-
-	/* background-image: url('../img/AI\ for\ Devt.png');
-	url('../img/aastu.png'), 
-	url('../img/Hash.png'), 
-	url('../img/IDI & Makerer.png'), 
-	url('../img/IDRC Canada.png'), 
-	url('../img/Makerer AI Lab.png'), 
-	url('../img/Sida.png'), 
-	url('../img/Sunbird AI.png');
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center; */
-
 	font-family: 'Arial', sans-serif;
 	background-color: #fcfcfc;
 	margin: 0;
@@ -23,13 +10,11 @@ body {
 	height: 100vh;
 }
 
-/* ///////////////////////// */
 
 .chat {
 	padding: 20px;
 	overflow-y: auto;
 	max-height: calc(100% - 70px);
-	/* max-height: 300px; */
 }
 
 .input-container {
@@ -55,8 +40,6 @@ img {
 	height: 4.8em;
 	display: block;
 	margin: 0.3em;
-	/* height: auto; */
-
 }
 
 .footer {
@@ -100,7 +83,6 @@ img {
 }
 
 .symptom-button {
-	/* background-color: #4CAF50; */
 	background-color: #4397c7;
 	color: black;
 	border: none;
@@ -108,12 +90,10 @@ img {
 	border-radius: 4px;
 	cursor: pointer;
 	margin: 5px;
-	/* outline: none; */
 	vertical-align: bottom;
 }
 
 .input-container button {
-	/* background-color: #4CAF50; */
 	background-color: #4397c7;
 	color: black;
 	border: none;
@@ -139,7 +119,6 @@ img {
 }
 
 .background-logos {
-	/* display: flex; */
 	flex-direction: column;
 	padding-top: 50px;
 }
@@ -161,7 +140,7 @@ img {
 }
 
 .logo img {
-	width: 10em;
+	width: 13em;
 	height: 6em;
 	margin-bottom: 2em;
 	opacity: 0.3;
