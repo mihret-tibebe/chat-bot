@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template, url_for, redirect 
 from inference_engine import run_expert_system
-from config import HOST, PORT, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
+# from config import HOST, PORT, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
 # from models import db, Prediction, Syndrom
 
 app = Flask(__name__, static_folder='static')
@@ -140,6 +140,6 @@ def predict():
 
 if __name__ == '__main__':
     app.run(
-        host = HOST,
-        port = PORT,
+        host = "localhost",
+        port = 5500,
 		debug=True)
