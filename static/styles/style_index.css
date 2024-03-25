@@ -19,6 +19,10 @@ body {
 	text-align: center;
 }
 
+.content p {
+	text-align: justify;
+}
+
 .content h1 {
 	margin-bottom: 0.5em;
 	background-color: #d5e7f1;
