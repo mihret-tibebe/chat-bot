@@ -281,6 +281,36 @@ function waitForUserInput(buttons) {
 	});
 }
 
+function toggleSidebar() {
+	var sidebar = document.getElementById("sidebar");
+	sidebar.classList.toggle("active");
+}
+
+function toggleSendFeedbackButton() {
+	var feedback = document.getElementById("feedback-txt").value;
+	var button = document.getElementById("next-btn");
+	if (feedback.trim() !== "") {
+		button.removeAttribute("disabled");
+	} else {
+		button.setAttribute("disabled", "disabled");
+	}
+	console.log("Button state:", button.disabled ? "disabled" : "enabled");
+}
+
+function sendFeedback() {
+	let feedback = document.getElementById('feedback-txt').value;
+
+	fetch('/feedback', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(feedback),
+	})
+	console.log("$$$$$$", feedback);
+}
+
+
 
 function sendMessage(symptomList, sex) {
 	console.log('Sending message');

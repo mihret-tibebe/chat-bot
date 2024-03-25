@@ -1,11 +1,23 @@
 # from flask import Flask, render_template
 from flask import Flask, request, jsonify, render_template
 from inference_engine import run_expert_system
+from flask_mail import Mail, Message
 # from config import HOST, PORT, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
 # from models import db, Prediction, Syndrom
 
 app = Flask(__name__, static_folder='static')
 app = Flask(__name__)
+
+# Configure mail settings
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'mhrt2255@gmail.com'
+app.config['MAIL_PASSWORD'] = 'cgij fdqk ogiy yibc'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+
+mail = Mail(app)
+# app.config['MAIL_PASSWORD'] = 'your-email-password'
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = SQLALCHEMY_TRACK_MODIFICATIONS
@@ -18,6 +30,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/amharic/')
+def index_amharic():
+    return render_template('index_amharic.html')
 
 @app.route('/chatbot')
 def chatbot():
@@ -70,6 +86,21 @@ def saveToDB(symptoms , response):
     
     
 
+
+# send feedback
+
+@app.route('/feedback', methods=['POST'])
+def sendFeedback():
+    # Your Flask function logic here
+    data = request.get_json()
+    feedback = data
+    print("$"*6, data)
+    msg = Message('Hash Chatbot Feedback', sender='mhrt2255@gmail.com', recipients=['mihret.tibebe239@gmail.com'])
+    msg.body = feedback
+    mail.send(msg)
+    return 'Success'
+
+# prediction
 
 @app.route('/templates', methods=['POST'])
 def predict():

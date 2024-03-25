@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hash Chatbot</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+	
+<!-- 	<link rel="stylesheet" href="{{ url_for('static', filename='/styles/style_test.css') }}"> -->
+	<link rel="stylesheet" href="/static/styles/style_test.css">
+
+</head>
+
+<body>
+	<div class="sidebar">
+		<a href="#home" class="sidebar-item">
+			<i class="bi bi-house-door-fill me-2"></i> መግቢያ
+		</a>
+		<a href="#about" class="sidebar-item">
+			<i class="bi bi-info-circle-fill me-2"></i> ስለ እኛ
+		</a>
+		<a href="#std" class="sidebar-item">
+			<i class="bi bi-file-medical me-2"></i> የአባላዘር በሽታዎች
+		</a>
+		<a href="#chatbot" class="sidebar-item">
+			<i class="bi bi-chat-left-dots-fill me-2"></i> ቻትቦት
+		</a>
+		<a href="#surrounding" class="sidebar-item">
+			<i class="bi bi-geo-alt-fill"></i> አካባቢዎ
+		</a>
+		<a href="#suggestion" class="sidebar-item">
+			<i class="bi bi-hospital me-2"></i> የጤና ማዕከላት
+		</a>
+		<a href="#resources" class="sidebar-item">
+			<i class="bi bi-book-fill me-2"></i> ምንጮች
+		</a>
+		<a href="#feedback" class="sidebar-item">
+			<i class="bi bi-chat-dots-fill me-2"></i> አስተያየት
+		</a>
+	</div>
+
+<!-- HOME -->
+
+	<div class="content" id="home">
+		<!-- Your content goes here -->
+		<h1>ሃሽ ቻትቦት</h1>
+		<ul>
+			<li>
+				ስም-አልባ ድጋፍ እና የአባላዘር በሽታዎችን (STDs) መረጃ ለመስጠት ቆርጠናል።
+			</li>
+			<li>
+				Our chatbot is designed to assist you in a confidential manner STDs disease symptom prediction, offering guidance and
+				resources tailored to your needs.
+			</li>
+		</ul>
+	</div>
+
+<!-- END OF HOME -->
+
+<!-- ABOUT -->
+	<div class="content" id="about">
+		<!-- Your content goes here -->
+		<h1>ስለ ሃሽ ቻትቦት</h1>
+		<p>
+			የዚህ ፕሮጀክት ዓላማው በተጠቃሚው በሚሰጡት ምልክቶች ላይ በመመርኮዝ የአባላዘር በሽታዎችን
+			መተንበይ ነው። ቻትቦቱ ለተጠቃሚው በጣም ሊከሰት የሚችሉ በሽታዎችን ያሳያል። ቻትቦቱ ማንነትን መደበቅ የሚያረጋግጥ እና የተጠቃሚውን ግላዊነት ለመጠበቅ ቅድሚያ የሚሰጠው መሆኑን ልብ ሊባል የሚገባው ጉዳይ ነው። በተጨማሪም፣ ፕሮጀክቱ ጎግል ካርታዎችን በመጠቀም በAASTU አቅራቢያ የሚገኝ የጤና ማእከልን መምከርን ያካትታል።
+		</p>
+
+		<p><strong>የእርስዎ ግላዊነት ቅድሚያ የምንሰጠው ጉዳይ ነው!!!</strong></p>
+	</div>
+<!-- END OF ABOUT -->
+
+<!-- STDs -->
+	<div class="content" id="std">
+		<!-- Your content goes here -->
+		<h1>ስለ STDs አጠቃላይ ግንዛቤ</h1>
+		<div>
+			<p>
+				የአባላዘር በሽታዎች ከፍተኛ የህብረተሰብ ጤና ስጋት ናቸው። ስለዚህ ግንዛቤን እና ትምህርትን መስጠት አስፈላጊ ነው።
+			</p>
+			
+			<p>
+				መደበኛ ምርመራ ያድርጉ፡- ምልክቶች ባይኖርዎትም መደበኛ የአባላዘር በሽታ ምርመራ ቀደም ብሎ ለመለየት እና ለማከም አስፈላጊ ነው።
+			</p>
+			
+			<p>
+				መርጃዎችን እና ድጋፍን ፈልጉ፡ ለመረጃ፣ ለሙከራ አገልግሎቶች እና መመሪያ እና ምክር መስጠት የሚችሉ የድጋፍ ድርጅቶችን ለማግኘት ታማኝ ምንጮችን ያግኙ።
+			</p>
+		</div>
+
+		<div>
+			<ul>
+				<li>አደጋን ይቀንሱ</li>
+				<li>ቅድመ-መጋለጥ ፕሮፊላክሲስ (PrEP)</li>
+				<li>Inform sexual partners</li>
+				<li>Vaccinations</li>
+			</ul>
+		</div>
+		
+
+	</div>
+
+<!-- END OF STDs -->
+
+<!-- CHATBOT -->
+	<div class="content" id="chatbot">
+		<!-- Your content goes here -->
+		<h1>Chatbot</h1>
+		<p>
+			The chatbot assures a private and confidential interaction with users by not storing any identifiable information or
+			conversation content.
+			<br>
+			You can freely respond to questions regarding symptoms raised by the chatbot and see predicted responses about your
+			symptoms.
+		</p>
+	
+		<a id="next-btn" href="/chatbot"><strong>Continue to Chatbot</strong></a>
+	</div>
+<!-- END OF CHATBOT -->
+
+<!-- SURROUNDING -->
+<div class="content" id="surrounding">
+	<!-- Your content goes here -->
+	<h1>Your Surrounding</h1>
+	<p>
+		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, odio! Quasi ducimus ex ut ea voluptates earum sint commodi veritatis ab vero, nemo, amet dolor rerum sequi necessitatibus! Et, ex?
+	</p>
+
+	<a id="next-btn" href="/chatbot"><strong>Link To Mathematical Model</strong></a>
+</div>
+<!-- END OF SURROUNDING -->
+
+<!-- SUGGESTUION -->
+<div class="content" id="suggestion">
+	<!-- Your content goes here -->
+	<h1>Suggested Health Center and Hospitals</h1>
+	<div>
+		<p>
+			As part of our service, we provide recommendations for nearby pharmacy and clinic locations to ensure convenient access to health Center and Hospitals.
+		</p>
+	</div>
+	
+	<div class="locations-container">
+		<div class="locations">
+			<h2>Tirunesh Bejing Hospital</h2>
+			<a href="https://www.google.com/maps/place/Tirunesh+Beijing+General+Hospital/@8.8775038,38.789792,15z/data=!4m2!3m1!1s0x0:0xffdc292ca560705c?sa=X&ved=1t:2428&ictx=111" target="_blank"><img src="../static/img/locations/TBGH.PNG" alt="TBGH"></a>
+		</div>
+
+		<div class="locations">
+			<h2>Milla Clinic</h2>
+			<a
+				href="https://www.google.com/maps/place/Milla+clinic/@8.8557294,38.8115644,15z/data=!4m6!3m5!1s0x164b79534d6c76cf:0x2c8fe8fcc455d71d!8m2!3d8.8557294!4d38.8115644!16s%2Fg%2F11t6mt1fyy?entry=ttu" target="_blank"><img
+					src="../static/img/locations/milla clinic.PNG" alt="milla clinic"></a>
+		</div>
+
+		<div class="locations">
+			<h2>Family Medium Clinic</h2>
+			<a
+				href="https://www.google.com/maps/place/Tirunesh+Beijing+General+Hospital/@8.8775038,38.789792,15z/data=!4m2!3m1!1s0x0:0xffdc292ca560705c?sa=X&ved=1t:2428&ictx=111" target="_blank"><img
+					src="../static/img/locations/milla clinic.PNG" alt="Family Medium clinic"></a>
+		</div>
+
+
+	</div>
+
+</div>
+
+<!-- END OF SUGGESTUION -->
+
+<!-- RESOURCES -->
+<div class="content" id="resources">
+	<!-- Your content goes here -->
+	<h1>Resources</h1>
+	<p>
+		Sexually transmitted diseases (STDs) can have a significant impact on individuals' health and well-being. To
+		provide
+		comprehensive support and information on STDs, we have gathered a collection of resources that include
+		educational
+		materials, testing options, and avenues for seeking professional guidance. Whether you're looking to learn about
+		STD
+		prevention, get tested, or find support, these resources will help you navigate the topic with confidence.
+	</p>
+
+</div>
+
+<!-- END OF RESOURCES -->
+
+<!-- FEEDBACK -->
+	<div class="content" id="feedback">
+		<!-- Your content goes here -->
+		<h1>Feedback</h1>
+		<p>
+			We value your feedback and strive to continuously improve our chatbot to better serve your needs. We would appreciate it
+			if you could take a moment to provide us with your valuable feedback.
+		</p>
+	
+		<textarea name="feedback" id="" cols="30" rows="4" placeholder="Please enter your feedback here..."></textarea>
+		<br>
+		<a id="next-btn" href="/chatbot"><strong>Send</strong></a>
+	</div>
+<!-- END OF FEEDBACK -->
+
+
+<!-- FOOTER -->
+<footer>
+
+	<div class="footer">
+		<!-- <div class="parnters-txt">
+			<p>
+				Our Partners
+			</p>
+		</div> -->
+
+		<div class="logo">
+			<a href="https://www.aastu.edu.et/" target="_blank"><img src="{{ url_for('static', filename='/img/aastu.png') }}" alt="aastu"></a>
+		</div>
+
+		<div class="logo">
+			<a href="https://africa.ai4d.ai/" target="_blank"><img src="{{ url_for('static', filename='/img/AIforDevt.png') }}" alt="ai for dev't Africa"></a>
+		</div>
+
+		<div class="logo">
+			<a href="https://hash.theacademy.co.ug/" target="_blank"><img src="{{ url_for('static', filename='/img/Hash.png') }}" alt="hash"></a>
+		</div>
+
+		<div class="logo">
+			<a href="https://idi.mak.ac.ug/" target="_blank"><img src="{{ url_for('static', filename='/img/IDIandMakerer.png') }}" alt="IDI & Makerer"></a>
+		</div>
+
+		<div class="logo">
+			<a href="https://www.idrc.ca/en" target="_blank"><img src="{{ url_for('static', filename='/img/IDRCCanada.png') }}" alt="IDRC Canada"></a>
+		</div>
+
+		<div class="logo">
+			<a href="https://air.ug/" target="_blank"><img src="{{ url_for('static', filename='/img/MakererAILab.png') }}" alt="Makerer AI Lab"></a>
+		</div>
+
+		<div class="logo">
+			<a href="https://www.sida.se/en/" target="_blank"><img src="{{ url_for('static', filename='/img/Sida.png') }}" alt="Sida"></a>
+		</div>
+
+		<div class="logo">
+			<a href="https://sunbird.ai/" target="_blank"><img src="{{ url_for('static', filename='/img/SunbirdAI.png') }}" alt="Sunbird AI"></a>
+		</div>
+
+	</div>
+</footer>
+<!-- END OF FOOTER -->
+
+	<!-- Bootstrap JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

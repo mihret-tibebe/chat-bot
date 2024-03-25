@@ -12,12 +12,18 @@
 	<link rel="stylesheet" href="/static/styles/style_test.css">
 
 	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='/styles/style.css') }}"> -->
-	<link rel="stylesheet" href="/static/styles/style.css">
+	<link rel="stylesheet" href="/static/styles/style_chatbot.css">
 
 </head>
 
 <body>
-	<div class="sidebar">
+	<div class="hamburger-menu" onclick="toggleSidebar()">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+	<div class="sidebar" id="sidebar">
 		<a href="/" class="sidebar-item">
 			<i class="bi bi-house-door-fill me-2"></i> Home
 		</a>
