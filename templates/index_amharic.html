@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hash Chatbot</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+	<!-- 	<link rel="stylesheet" href="{{ url_for('static', filename='/styles/style_test.css') }}"> -->
+	<link rel="stylesheet" href="/static/styles/style_index.css">
+
+	<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+
+</head>
+
+<body>
+    <div class="fixed-top-right">
+        <a href="/" class="language-button">
+            EN
+        </a>
+    </div>
+
+	<div class="hamburger-menu" onclick="toggleSidebar()">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+
+	<div class="sidebar" id="sidebar">
+		<!--<a href="/" class="sidebar-item">-->
+		<!--	EN-->
+		<!--</a>-->
+
+		<a href="#home" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-house-door-fill me-2"></i> መግቢያ
+		</a>
+		<a href="#about" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-info-circle-fill me-2"></i> ስለ እኛ
+		</a>
+
+		<!-- bi bi-file-medical me-2 -->
+		<a href="#std" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-gender-ambiguous me-2"></i> በጾታዊ ግንኙነት የሚተላለፉ በሽታዎች
+		</a>
+
+		<a href="#prevention" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-alphabet-uppercase me-2"></i> መከላከል
+		</a>
+
+		<a href="#chatbot" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-chat-left-dots-fill me-2"></i> ቻትቦት
+		</a>
+		<a href="#surrounding" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-geo-alt-fill me-2"></i> የእርስዎ ዙሪያ [የሂሳብ ሞዴል መረጃ]
+		</a>
+		<a href="#suggestion" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-hospital me-2"></i> የጤና ማዕከላት
+		</a>
+		<a href="#resources" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-book-fill me-2"></i> ምንጮች
+		</a>
+		<a href="#feedback" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-chat-dots-fill me-2"></i> አስተያየት
+		</a>
+	</div>
+
+	<!-- HOME -->
+
+	<div class="content" id="home">
+		<!-- Your content goes here -->
+		<h1>እንኳን ወደ ኢቲዮ-ሃሽ ፕሮጀክት በደህና መጡ</h1>
+		<p>
+			በምስራቅ ኣፍሪካ በ ኢትዩጵያ ውስጥ የሚገኝው የ <a href="https://hash.theacademy.co.ug/" target="_blank">(HASH)</a> ፕሮጀክት ቡድን
+			የአፍሪካ የእናቶች የጤና ጉዳይ፣ጾታዊ ጉዳይ እንዲሁም በግብረ ስጋ ግንኝነት የሚተላለፍ በሽታዎችን ጉዳይ በአርቴፊሻል ኢንተለጀንስ በመደገፍ እየሰራ መሆኑ የታወቃል።
+			ኢቲዮ-ሃሽ ቻትቦት ለኢትዮጵያ ዩኒቨርሲቲ ተማሪዎችን በግብረ ሥጋ ግንኙነት የሚተላለፉ በሽታዎችን የግንዛቤ ማስጨበጥ ስራ ይስራል፣ሚስጥርን በጠበቀ መልኩ የመጀመሪያ ምርመራ
+			ያደርጋል እንዲሁም በአካባቢ ያሉትን የጤና ጣቢያ ይጠቁማል።ይህ የጅምር የምርመራ ቻትቦት ስለ ግብረ ሥጋ ግንኙነት የሚተላለፉ በሽታዎችን (STDs) የግንዛቤ ማስጨበጥ ስራ
+			የሚሰራው ወቅታዊ ከሆነው ከ ዩኒቨርሲቲ ተማሪዎች የውስጥ እና የውጭ እንቅሰቃሴ ላይ በመመስረት ነው።
+
+			ይህ የቻትቦት <a href="https://sdgs.un.org/goals" target="_blank">የዘላቂ ልማት ግቦች 3 </a> ላይ የተቀመጠውን ሁሉም ሰው የገንዘብ ችግር
+			ሳይገጥመው ጥራት ያለው የጤና አገልግሎት እንዲያገኝ ማረጋገጥ የሚለውን ለማሳካት ይጠቅማል።
+		</p>
+	</div>
+
+	<!-- END OF HOME -->
+
+	<!-- ABOUT -->
+	<div class="content" id="about">
+		<!-- Your content goes here -->
+		<h1>ስለ ፕሮጀክቱ</h1>
+		<p>
+			ከሰሃራ በታች ባሉ የአፍሪካ የእናቶችን ጤንንነት፣ ጾታዊ እና የስነ ተዋልዶ ጤና አርቴፊሻል ኢንተለጀንስ ላይ ያለው የኢኖቬሽን ማዕከል (<a
+				href="https://hash.theacademy.co.ug/" target="_blank">(HASH)</a>) በ <a href="https://africa.ai4d.ai/"
+				target="_blank">AI4D</a> ፕሮጀክት በ<a href="https://www.idrc.ca/en" target="_blank">IDRC</a> የሚደገፍ ፕሮጀክት
+			ነው. እንደ ንኡስ የፕሮጀክት አካል ፥የአዲስ አበባ ሳይንስና ቴክኖሎጂ ዩኒቨርሲቲ (<a href="https://www.aastu.edu.et/"
+				target="_blank">(AASTU)</a>) ቡድን በሱራፌል ሉልሰገድ ጥላሁን (ዶ/ር) እንደ ፒአይ እና አቶ ጌታቸው ደርሶ እንደ ተባባሪ ፒአይ የሚመራው ቡድን
+			ቻትቦት የሚያሳይ ድረ-ገጽ ፈጠረ። ቡድኑ በንዑስ ቡድኖች የተከፋፈለ ነው። የሒሳብ ሞዴሊንግ ቡድን፣ በአቶ ሰለሞን ሞላ የሚመራው ሲሆን በ ምህረት ጥበበ እና ኤልሳቤት ሰሎሞን የሚመራው የቻትቦት ዲዛይን ቡድን እዲሁም በዶ/ር ፍሬሂወት ጉተማ የሚመራው የህክምና ቡድን ነው።. ይህ ድረ-ገጽ መሰረታዊ የፕሮጀክት መረጃን፣ ሚስጥራዊ
+			ቻትቦት፣ በአቅራቢያው ያሉ ተዛማጅ ጤና ጣቢያዎች፣ በዙሪያው ያሉ ሁኔታዎችን እና መንስኤዎችን እና ሌሎች ግንዛቤን ለማሳደግ የሚጠቅሙ ግብዓቶችን ይዟል።
+			ለበለጠ መረጃ እባክዎን የፕሮጀክቱን ዋና መርማሪ በ <a
+				href="mailto:surafel.luleseged@aastu.edu.et">surafel.luleseged@aastu.edu.et</a>ያግኙ።
+		</p>
+
+	</div>
+	<!-- END OF ABOUT -->
+
+	<!-- STDs -->
+	<div class="content" id="std">
+		<!-- Your content goes here -->
+		<h1>በጾታዊ ግንኙነት የሚተላለፉ በሽታዎች</h1>
+		<div>
+			<p>
+				በግብረ ሥጋ ግንኙነት የሚተላለፉ በሽታዎች (STDs) ከፍተኛ የሕዝብ ጤና አሳሳቢ ናቸው፣ እና አስፈላጊ ነው።
+				ማስተዋወቅ
+				ስለ መከላከል እና ጥበቃ ግንዛቤ እና ትምህርት።
+			</p>
+
+			<p>
+				መደበኛ ምርመራ ያድርጉ፡- ምልክቶች ባይኖርዎትም መደበኛ የአባላዘር በሽታ (STD) ምርመራ ቀደም ብሎ አስፈላጊ ነው።
+				ማወቂያ እና
+				ሕክምና።
+			</p>
+
+			<p>
+				ግብዓቶችን እና ድጋፍን ይፈልጉ፡ ለመረጃ፣ ለሙከራ አገልግሎቶች እና ለድጋፍ ታማኝ ምንጮችን ያግኙ
+				ድርጅቶች
+				መመሪያ እና ምክር ሊሰጥ ይችላል።
+			</p>
+		</div>
+
+		<div class="table-container">
+			<table>
+				<tr>
+					<th>በሽታ</th>
+					<th>ኢትዮሎጂ</th>
+					<th>የተለመደ ክሊኒካዊ አቀራረብ</th>
+					<th>ካለመታም የሚመጡ ውስብስቦች</th>
+				</tr>
+				<tr>
+					<td colspan="3"><strong>ባክቴሪያ</strong></td>
+				</tr>
+				<tr>
+					<td>ጨብጥ</td>
+					<td>Neisseria gonorrhoeae</td>
+					<td>የወንድ ብልት ፈሳሾች፣ የሴት ብልት ፈሳሾች እና በታችኛው የሆድ ክፍል ውስጥ በሴቶች ላይ የሚደርሰው ህመም ፤ ምንም ምልክት የማያሳይ ሊሆን ይችላል።
+					</td>
+					<td>በሽንት ቱቦ ውስጥ ያሉ ጠባሳዎች <br>ወደ ሌሎች የሰውነት ክፍሎች ያሰራጩ</td>
+				</tr>
+				<tr>
+					<td>ክላሚዲያ</td>
+					<td>Chlamydia trachomatis</td>
+					<td>የወንድ ብልት ፈሳሾች፣ የማኅጸን ቁርጠት (cervicitis) እና በታችኛው የሆድ ክፍል ውስጥ በሴቶች ላይ የሚሠቃይ ሕመም ፤ ምንም ምልክት የማያሳይ ሊሆን ይችላል።</td>
+					<td>መሃንነት <br>ኤፒዲዲሚቲስ</td>
+				</tr>
+				<tr>
+					<td>ቂጥኝ</td>
+					<td>Treponema pallidum</td>
+					<td>አኖጄኒካል ቁስሎች (ቻንከር)፣ የኢንጊኒናል እብጠት፣ አጠቃላይ የቆዳ ሽፍታ፣ ድድ</td>
+					<td>ዓይነ ስውርነት<br>ሽባነት እና በልብዎ ላይ ወደ ችግሮች ያመራሉ</td>
+				</tr>
+				<tr>
+					<td>ቻንክሮይድ</td>
+					<td>Haemophilis ducreyi</td>
+					<td>የብልት ቁስለት ከ inguinal እብጠት ጋር (ቡቦ)</td>
+					<td>የፊስቱላ ትራክቶችን እድገት</td>
+				</tr>
+				<tr>
+					<td>ግራኑሎማ ኢንጒናል</td>
+					<td>Klebsiella Granulomatis</td>
+					<td>በብልት አካባቢ እና በፔሪንየም ላይ የበሬ ሥጋ ቀይ መልክ ያለው ቁስለት</td>
+					<td>የደም መፍሰስ<br>ጠባሳ</td>
+				</tr>
+				<tr>
+					<td colspan="3"><strong>የቫይረስ ኢንፌክሽኖች</strong></td>
+				</tr>
+				<tr>
+					<td>ኤድስ</td>
+					<td>Human Immunodeficiency Virus</td>
+					<td>አሲምፕቶማቲክ፣ አጠቃላይ ሊምፍዴኖፓቲ፣ የማያቋርጥ ትኩሳት፣ የቆዳ ሽፍታ፣ ክብደት መቀነስ ወዘተ.</td>
+					<td>ሊምፎማ<br>ካፖሲ ሳርኮማ</td>
+				</tr>
+				<tr>
+					<td>የሄርፒስ ብልት</td>
+					<td>Herpes simplex virus type 2 (HSV 2)</td>
+					<td>በ አኖጀነታል አካባቢ ላይ የቬሲኩላር ቁስሎች</td>
+					<td>ከብልት ሄርፒስ የተከፈቱ ቁስሎች ያላቸው ሰዎች ለኤችአይቪ የመጋለጥ እድላቸው በእጥፍ ይጨምራል</td>
+				</tr>
+				<tr>
+					<td>የብልት ኪንታሮት</td>
+					<td>Human pappiloma virus (HPV)</td>
+					<td>አኖጄኒካል ኪንታሮት፣ የማኅጸን አንገት ኪንታሮት፣ በሴቶች ላይ የማኅጸን ነቀርሳ</td>
+					<td>የፊንጢጣ ካንሰር<br>የሴት ብልት ካንሰር</td>
+				</tr>
+				<tr>
+					<td>የቫይረስ ሄፓታይተስ</td>
+					<td>Hepatitis B virus (HBV)</td>
+					<td>በዋነኛነት ምንም ምልክት ሳይታይበት ፣ ማቅለሽለሽ ፣ ማሽቆልቆል ፣ የጉበት መጨመር ፣ ጃንዲስ</td>
+					<td>ሲሮሲስ<br>የጉበት ካንሰር</td>
+				</tr>
+				<tr>
+					<td>ሞሉስከም ቾንታጂኦሰም</td>
+					<td>Molluscum contagiosum virus</td>
+					<td>እምብርት ፣ የቆዳ ቀለም ያላቸው ጠንካራ እጢዎች ፣ ብልት ወይም አጠቃላይ</td>
+					<td>ሁለተኛ ደረጃ ኢንፌክሽኖች</td>
+				</tr>
+				<tr>
+					<td colspan="3"><strong>ሌሎች</strong></td>
+				</tr>
+				<tr>
+					<td>ትሪኮሞኒስስ</td>
+					<td>Trichomonas vaginalis</td>
+					<td>አሲምፕቶማቲክ; የበዛ አረፋ ከሴት ብልት ፈሳሽ</td>
+					<td>በኤች አይ ቪ የመያዝ አደጋን ይጨምራል</td>
+				</tr>
+				<tr>
+					<td>ካንዲዳይስ</td>
+					<td>Candida albicans</td>
+					<td>ወፍራም እርጎ እንደ የሴት ብልት ፈሳሽ፣ የሴት ብልት ማሳከክ ወይም ማቃጠል</td>
+					<td>ኢንዶካርዲቲስ<br>ኢንዶፍታልሚቲስ</td>
+				</tr>
+				<tr>
+					<td>እከክ</td>
+					<td>Sarcoptes scabei</td>
+					<td>በዲጂት ፣ አክሲላ እና መቀመጫ አካባቢ መካከል የቆዳ ማሳከክ ፣ በምሽት እየተባባሰ ይሄዳል</td>
+					<td>ሴፕቲክሚያ</td>
+				</tr>
+			</table>
+		</div>
+
+
+	</div>
+
+	<!-- END OF STDs -->
+
+	<!-- PREVENTION -->
+	<div class="content" id="prevention">
+		<h1>መከላከል</h1>
+		<p>
+			የአባላዘር በሽታ መከላከልን በተመለከተ ቀላል <strong>መ ሕጎች</strong> አቀራረብ እዚህ አለ።
+		</p>
+
+		<h5>መታቀብ</h5>
+
+		<p>
+			የአባላዘር በሽታዎችን ለመከላከል በጣም ውጤታማው መንገድ የሴት ብልት፣ የፊንጢጣ እና የቃልን ጨምሮ የግብረ-ሥጋ ግንኙነትን መተው ነው።
+			ወሲብ. መታቀብ የአባላዘር በሽታዎችን የመያዝ ወይም የማስተላለፍ አደጋን ያስወግዳል።
+		</p>
+
+		<h5>መታመን</h5>
+
+		<p>
+			ለአባላዘር በሽታዎች አሉታዊ ምርመራ ካደረገ አጋር ጋር በአንድነት የሚኖር ግንኙነት ካለህ አደጋው
+			የአባላዘር በሽታዎች በከፍተኛ ሁኔታ ቀንሷል። ታማኝ መሆን እና ቁርጠኝነት ያለው የረጅም ጊዜ ግንኙነት
+			ታማኝ ከሆነ አጋር ጋር የአባላዘር በሽታዎችን ለመከላከል ይረዳል።
+		</p>
+
+		<h5>መጠቀም</h5>
+
+		<p>
+			ቋሚ እና ትክክለኛ ኮንዶም መጠቀም የአባላዘር በሽታዎችን የመያዝ ወይም የመተላለፍ አደጋን በእጅጉ ይቀንሳል።
+			ኮንዶም እንደ እንቅፋት ሆኖ ከብዙ የአባላዘር በሽታዎች ይከላከላል፣ ኤች አይ ቪ፣ ጨብጥ፣ ክላሚዲያ እና
+			ቂጥኝ. በእያንዳንዱ የግብረ-ሥጋ ግንኙነት ወቅት ከመጀመሪያ እስከ መጨረሻ ድረስ ኮንዶም መጠቀም አስፈላጊ ነው።
+			ጥበቃ.
+
+			<br>ከ መ ሕጎች በተጨማሪ ለአባላዘር በሽታዎች በየጊዜው መመርመር በጣም አስፈላጊ ነው፣ በተለይ እርስዎ ከሆኑ
+			ወሲባዊ ንቁ ወይም ብዙ አጋሮች አሏቸው። መሞከር ቀደም ብሎ ለማወቅ, ወቅታዊ ህክምና እና
+			ተጨማሪ ስርጭትን መከላከል.
+
+			እንዲሁም ስለጾታዊ ጤና፣ የአባላዘር በሽታዎች እና ከባልደረባዎ (ዎች) ጋር በግልፅ እና በታማኝነት መነጋገር በጣም አስፈላጊ ነው።
+			ሙከራ. ይህ መተማመንን ለመመስረት ይረዳል እና ኃላፊነት የሚሰማው የወሲብ ባህሪን ያበረታታል።
+		</p>
+
+	</div>
+	<!-- END OF PREVENTION -->
+
+	<!-- CHATBOT -->
+	<div class="content" id="chatbot">
+		<!-- Your content goes here -->
+		<h1>ቻትቦት </h1>
+		<p>
+			ቻትቦት የመጀመሪያ ደረጃ ምርመራን ለማቅረብ የተነደፈ እና የጤና ባለሙያዎችን ለመተካት የታሰበ አይደለም. በተነደፈ የባለሙያዎች ጥያቄዎች እና ኣስተያየት ላይ የተመሰረተ
+			ቻትቦት ነው.
+			ቻትቦቱ የተጠቃሚዎችን ስም አይጠይቅም እንዲሁም ከተጠቃሚው ምንም አይነት የግል መረጃ አይሰበስብም፣ ስለዚህ ተጠቃሚዎች ሳይጨነቁ በነፃነት ሊጠቀሙበት ይችላሉ።ቻትቦትን
+			ለመጠቀም ከዚህ በታች ያለውን &quot;<strong>ወደ ቻትቦት ይቀጥሉ</strong>&quot; የሚለውን ቁልፍ ጠቅ ያድርጉ፡:
+		</p>
+
+		<a id="next-btn" href="/chatbot"><strong>ወደ ቻትቦት ይቀጥሉ</strong></a>
+		<p style="text-align: center;	margin-top: 2em;"><strong>የእርስዎን ሚስጥር መጠበቅ ቅድሚያ የምንሰጠው ጉዳይ ነው!!!</strong></p>
+	</div>
+	<!-- END OF CHATBOT -->
+
+	<!-- SURROUNDING -->
+	<div class="content" id="surrounding">
+		<!-- Your content goes here -->
+		<h1>የእርስዎ ዙሪያ [የሂሳብ ሞዴል መረጃ]</h1>
+		<p>
+			በአንዳንድ ግምቶች ላይ በመመስረት የሂሳብ ሞዴል ተዘጋጅቷል. መረጃ የተሰበሰበው ከካምፓስ ክሊኒክ እና ከአካባቢው ጤና ጣቢያዎች ነው. የመለኪያዎችን ተፅእኖ ለመተንተን
+			የጎደለውን መረጃ ለመሙላት ከሥነ ጽሑፍ ተጨማሪ መረጃ ጥቅም ላይ ውሏል. በዚህም መሰረት የ STD ስርጭት ከአካባቢው ማህበረሰብ በካምፓስ ውስጥ ካለው እንዲሁም ከጤና
+			ጣቢያዎች ስርጭት የበለጠ ነው. በግቢው ውስጥ ያለው የአባላዘር በሽታ ስርጭት በሆስፒታል ውስጥ ከሚተላለፉ ወይም ከተከታተሉ ታካሚዎች ጋር ሲነፃፀር በሁለተኛ ደረጃ ከፍ ያለ
+			ነው. ስለዚህ፣ ተማሪዎች ተገቢውን የ ’መ’ ህጎችን ማለትም መታቀብ፤መወሰን እንዲሁም ኮንዶም መጠቀም እርምጃ በመከተል ራሳቸውን ማወቅ እና መጠበቅ አለባቸው።የተገነባው
+			የሂሳብ ሞዴል እና ጥቅም ላይ የዋሉ ግምቶች ከዚህ በታች ካለው አገናኝ ማግኘት ይቻላል:
+		</p>
+
+		<!-- <a id="next-btn" href="/mathematicalModel" target="_blank"><strong>Link To Mathematical Model</strong></a> -->
+		<a id="next-btn" href="/mathematicalModel" target="_blank"><strong>ወደ የሂሳብ ሞዴል አገናኝ</strong></a>
+	</div>
+	<!-- END OF SURROUNDING -->
+
+	<!-- SUGGESTUION -->
+	<div class="content" id="suggestion">
+		<!-- Your content goes here -->
+		<h1>የተጠቆሙ የጤና ማእከል እና ሆስፒታሎች</h1>
+		<div>
+			<p>
+				የግቢው ክሊኒክ በቀን 24 ሰአት በሳምንት ሰባት ቀን መሰረታዊ እርዳታ ለመስጠት ዝግጁ ነው. ከካምፓስ ክሊኒክ በተጨማሪ የሚከተሉት ጤና ጣቢያዎች ተጨማሪ ምርመራ፣
+				ምርመራ እና ድጋፍ ይሰጣሉ.
+			</p>
+		</div>
+
+		<div class="locations-container">
+			<div class="locations">
+				<h5>AASTU Clinic</h5>
+				<a href="https://www.google.com/maps/place/AASTU+medical+center/@8.8843641,38.8007695,15z/data=!4m10!1m2!2m1!1saastu+clinic+tulu+dimtu!3m6!1s0x164b8313910c304b:0xa9e34b2f58119854!8m2!3d8.8843636!4d38.811866!15sChdhYXN0dSBjbGluaWMgdHVsdSBkaW10dZIBDm1lZGljYWxfY2VudGVy4AEA!16s%2Fg%2F11k6vcgdnx?entry=ttu"
+					target="_blank"><img src="../static/img/locations/aastu_clinic.JPG" alt="AASTU clinic"></a>
+			</div>
+
+			<div class="locations">
+				<h5>Tirunesh Bejing Hospital</h5>
+				<a href="https://www.google.com/maps/place/Tirunesh+Beijing+General+Hospital/@8.8775038,38.789792,15z/data=!4m2!3m1!1s0x0:0xffdc292ca560705c?sa=X&ved=1t:2428&ictx=111"
+					target="_blank"><img src="../static/img/locations/TBGH.PNG" alt="TBGH"></a>
+			</div>
+
+			<div class="locations">
+				<h5>Milla Clinic</h5>
+				<a href="https://www.google.com/maps/place/Milla+clinic/@8.8557294,38.8115644,15z/data=!4m6!3m5!1s0x164b79534d6c76cf:0x2c8fe8fcc455d71d!8m2!3d8.8557294!4d38.8115644!16s%2Fg%2F11t6mt1fyy?entry=ttu"
+					target="_blank"><img src="../static/img/locations/milla clinic.PNG" alt="milla clinic"></a>
+			</div>
+
+			<div class="locations">
+				<a href="https://www.google.com/maps/search/nearest+heatlh+center/" target="_blank">More</a>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- END OF SUGGESTUION -->
+
+	<!-- RESOURCES -->
+	<div class="content" id="resources">
+		<!-- Your content goes here -->
+		<h1>የመረጃዎች ምንጮች</h1>
+		<p>
+			በግብረ ሥጋ ግንኙነት ስለሚተላለፉ በሽታዎች (STDs) ጥልቅ ድጋፍ እና መረጃ ለመስጠት፣ ስለ መከላከል፣ ምርመራ፣ ዓይነት እና ሌሎች እውነታዎች የበለጠ ለመረዳት
+			እንዲረዳዎ ከዚህ በታች ካሉ አስተማማኝ ምንጮች የተለያዩ ሀብቶችን ሰብስበናል.
+		</p>
+
+		<div class="resources">
+			<p>
+				<a href="https://www.prb.org/wp-content/uploads/2020/06/Ethiopia-National-Reproductive-Health-Strategy-2016-2020.pdf"
+					target="_blank">ብሔራዊ የስነ ተዋልዶ ጤና ስትራቴጂ</a>
+
+				<br />
+
+				<a href="https://www.nichd.nih.gov/health/topics/stds/more_information/resources" target="_blank">NIH፡
+					በግብረ ሥጋ ግንኙነት የሚተላለፉ በሽታዎች (STDs) መርጃዎች</a>
+
+				<br>
+
+				<a href="https://www.cdc.gov/std/default.htm" target="_blank">ሲዲሲ፡ በግብረ ሥጋ ግንኙነት የሚተላለፉ በሽታዎች (STDs)</a>
+
+				<br>
+
+				<a href="https://www.who.int/news-room/fact-sheets/detail/sexually-transmitted-infections-(stis)"
+					target="_blank">የዓለም ጤና ድርጅት፡ በግብረ ሥጋ ግንኙነት የሚተላለፉ ኢንፌክሽኖች (STIs)</a>
+			</p>
+		</div>
+	</div>
+
+	<!-- END OF RESOURCES -->
+
+	<!-- FEEDBACK -->
+	<div class="content" id="feedback">
+		<h1>አስተያየት</h1>
+		<p>
+			የእርስዎን አስተያየት ዋጋ እንሰጣለን!
+			የእርስዎአስተያየት የ STD ቻትቦት አገልግሎታችንን ጥራት እና እንዲሁም በዚህ ድህረ ገጽ ላይ ያሉትን ሌሎች የግንዛቤ ማስጨበጫ እና የመረጃ ምንጮችን ለማሻሻል ይረዳናል.
+			ለለውጦች ምንም አይነት ምክሮች ካሉዎት፣ ምንም አይነት ችግር ካጋጠመዎት ወይም በቀላሉ ልምድዎን ማካፈል ከፈለጉ፣ እባክዎን ስሞትን ሳይጠቅሱ አስተያየቶችዎን ከዚህ በታች
+			ባለው ቦታ ያስቀምጡ።
+		</p>
+
+		<textarea name="feedback" id="feedback-txt" cols="30" rows="4" placeholder="እባክዎን አስተያየትዎን እዚህ ያስገቡ..."
+			oninput="toggleSendFeedbackButton(); feedbackWordLimit();"></textarea>
+		<br>
+		<button class="symptom-button" id="send-btn" onclick="sendFeedback()" disabled><strong>ላክ</strong></button>
+	</div>
+	<!-- END OF FEEDBACK -->
+
+
+	<footer class="fixed-bottom bg-light footer-container">
+		<div class="container ">
+			<div class="row footer-row">
+				<div class="col-lg">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://www.aastu.edu.et/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/aastu.png') }}" alt="aastu"
+										class="img-fluid"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://africa.ai4d.ai/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/AIforDevt.png') }}"
+										alt="ai for dev't Africa" class="img-fluid"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://hash.theacademy.co.ug/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/Hash.png') }}" alt="hash"
+										class="img-fluid"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://idi.mak.ac.ug/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/IDIandMakerer.png') }}"
+										alt="IDI & Makerer" class="img-fluid"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://www.idrc.ca/en" target="_blank"><img
+										src="{{ url_for('static', filename='/img/IDRCCanada.png') }}" alt="IDRC Canada"
+										class="img-fluid"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://air.ug/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/MakererAILab.png') }}"
+										alt="Makerer AI Lab" class="img-fluid"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://www.sida.se/en/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/Sida.png') }}" alt="Sida"
+										class="img-fluid"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://sunbird.ai/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/SunbirdAI.png') }}" alt="Sunbird AI"
+										class="img-fluid"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row footer-row">
+				<div class="col">
+					<div class="copyright">
+						<p>&#169; <span id="year"></span> Ethio-Hash Project All rights reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- END OF FOOTER -->
+
+	<!-- Bootstrap JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script>
+		document.getElementById("year").textContent = new Date().getFullYear();
+	</script>
+
+	<!-- <script src="{{ url_for('static', filename='/scripts/script.js') }}"></script> -->
+	<script src="../static/scripts/script.js"></script>
+
+	<script>
+		document.getElementById("std").addEventListener("change", function () {
+			var selectedOption = this.value;
+			if (selectedOption === '#std') {
+				console.log('########### hmmmmmmmm')
+				window.location.href = this.value;
+			}
+		});
+	</script>
+
+</body>
+
+</html>

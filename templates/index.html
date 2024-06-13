@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hash Chatbot</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+	<!-- 	<link rel="stylesheet" href="{{ url_for('static', filename='/styles/style_test.css') }}"> -->
+	<link rel="stylesheet" href="/static/styles/style_index.css">
+
+	<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+	<!--<script>-->
+	<!--	Weglot.initialize({-->
+	<!--		api_key: 'wg_4da8cf01cbce55cefa8f736f06aa46695'-->
+	<!--	});-->
+	<!--</script>-->
+</head>
+
+<body>
+    <div class="fixed-top-right">
+        <a href="/amharic/" class="language-button">
+            አማ
+        </a>
+    </div>
+
+	<div class="hamburger-menu" onclick="toggleSidebar()">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+	<div class="sidebar" id="sidebar">
+		<!--<a href="/amharic/" class="sidebar-item">-->
+		<!--	አማ-->
+		<!--</a>-->
+
+		<a href="#home" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-house-door-fill me-2"></i> Home
+		</a>
+		<a href="#about" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-info-circle-fill me-2"></i> About
+		</a>
+
+		<!-- bi bi-file-medical me-2 -->
+		<a href="#std" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-gender-ambiguous me-2"></i> STDs
+		</a>
+
+		<a href="#prevention" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-alphabet-uppercase me-2"></i> Prevention
+		</a>
+
+		<a href="#chatbot" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-chat-left-dots-fill me-2"></i> Chatbot
+		</a>
+		<a href="#surrounding" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-geo-alt-fill me-2"></i> Your Surrounding
+		</a>
+		<a href="#suggestion" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-hospital me-2"></i> Health Center and Hospitals
+		</a>
+		<a href="#resources" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-book-fill me-2"></i> Resources
+		</a>
+		<a href="#feedback" class="sidebar-item" onclick="toggleSidebar()">
+			<i class="bi bi-chat-dots-fill me-2"></i> Feedback
+		</a>
+	</div>
+
+	<!-- HOME -->
+
+	<div class="content" id="home">
+		<!-- Your content goes here -->
+		<h1>Wellcome to Ethio-Hash Project</h1>
+		<p>
+			As part of the Innovation Hub on Artificial Intelligence for Maternal, Sexual, and Reproductive Health in
+			Sub-Saharan Africa <a href="https://hash.theacademy.co.ug/" target="_blank">(HASH)</a>, we are committed to
+			assisting Ethiopian university students with sexually
+			transmitted disease awareness, a start-up diagnostic chatbot, and local parameters contributing the
+			transmission of sexually transmitted diseases (STDs). The chatbot was created to be anonymous, and
+			the awareness generation is based on key and current characteristics of campus life and its surrounds.
+
+			This initiative supports and contributes to the achievement of <a href="https://sdgs.un.org/goals"
+				target="_blank">SDG3</a>: Good health and well-being.
+		</p>
+	</div>
+
+	<!-- END OF HOME -->
+
+	<!-- ABOUT -->
+	<div class="content" id="about">
+		<!-- Your content goes here -->
+		<h1>About the Project</h1>
+		<p>
+			The Innovation Hub on Artificial Intelligence for Maternal, Sexual, and Reproductive Health in Sub-
+			Saharan Africa <a href="https://hash.theacademy.co.ug/" target="_blank">(HASH)</a> is a project supported by
+			the <a href="https://www.idrc.ca/en" target="_blank">IDRC</a> under the <a href="https://africa.ai4d.ai/"
+				target="_blank">AI4D</a> project. As part of the sub-
+			grantee, a team from Addis Abeba Science and Technology University <a href="https://www.aastu.edu.et/"
+				target="_blank">(AASTU)</a>, directed by Surafel Luleseged Tilahun (PhD) as a PI and Mr. Getachew Derso
+			as a co-PI created this site featuring an anonymous chatbot for STD diagnosis from the outset. The team is
+			divided into sub-teams: the mathematical modeling team, directed by Mr. Solomon Molla; the chatbot design
+			team, led by Ms. Mihiret Tibebe and Ms. Elsabeth Solomon; and the medical team, lead
+			by Dr Frehiwot Gutema. This website contains basic project information, an anonymous chatbot, the
+			nearest relevant health centers, surrounding situations and factors, and other resources for raising
+			awareness. For more information, please contact the project&#39;s principal investigator at
+			<a href="mailto:surafel.luleseged@aastu.edu.et">surafel.luleseged@aastu.edu.et</a>.
+		</p>
+
+	</div>
+	<!-- END OF ABOUT -->
+
+	<!-- STDs -->
+	<div class="content" id="std">
+		<!-- Your content goes here -->
+		<h1>Sexually Transmitted Diseases (STDs)</h1>
+		<div>
+			<p>
+				Sexually transmitted diseases (STDs) are a significant public health concern, and it is essential to
+				promote
+				awareness and education about their prevention and protection.
+			</p>
+
+			<p>
+				Get regular testing:-Even if you don't have symptoms, regular STD testing is important for early
+				detection and
+				treatment.
+			</p>
+
+			<p>
+				Seek resources and support: Access reliable sources for information, testing services, and support
+				organizations
+				that can provide guidance and counseling.
+			</p>
+		</div>
+
+		<div class="table-container">
+
+			<table>
+				<tr>
+					<th>Disease</th>
+					<th>Etiology</th>
+					<th>Common Clinical Presentation</th>
+					<th>Complications if not Treated</th>
+				</tr>
+				<tr>
+					<td colspan="3"><strong>Bacterial</strong></td>
+				</tr>
+				<tr>
+					<td>Gonorrhea</td>
+					<td>Neisseria gonorrhoeae</td>
+					<td>Urethral discharge, vaginal discharge and lower abdominal pain in women, may be asymptomatic</td>
+					<td>Scars in the urethra <br>Spread to other body parts</td>
+				</tr>
+				<tr>
+					<td>Chlamydia</td>
+					<td>Chlamydia trachomatis</td>
+					<td>Urethral discharge, cervicitis, and lower abdominal pain in women, may be asymptomatic</td>
+					<td>Infertility <br>Epididmyitis</td>
+				</tr>
+				<tr>
+					<td>Syphilis</td>
+					<td>Treponema pallidum</td>
+					<td>Anogenital ulcers (chancre), inguinal swelling, generalized skin rash, gumma</td>
+					<td>Blindness <br>Paralysis and lead to problems with your heart</td>
+				</tr>
+				<tr>
+					<td>Chancroid</td>
+					<td>Haemophilis ducreyi</td>
+					<td>Genital ulcer with inguinal swelling (Bubo)</td>
+					<td>Development of fistulous tracts</td>
+				</tr>
+				<tr>
+					<td>Granuloma inguinale</td>
+					<td>klebsiella granulomatis</td>
+					<td>Ulcer with beefy red appearance over genital area and perineum</td>
+					<td>Bleeding <br>Scarring </td>
+				</tr>
+				<tr>
+					<td colspan="3"><strong>VIRAL INFECTIONS</strong></td>
+				</tr>
+				<tr>
+					<td>Acquired immunodeficiency syndrome (AIDS)</td>
+					<td>Human immunodeficiency virus</td>
+					<td>Asymptomatic, generalized lymphadenopathy, persistent fever, skin rash, weight loss etc.</td>
+					<td>Lymphoma <br>Kaposi sarcoma</td>
+				</tr>
+				<tr>
+					<td>Herpes genitalis</td>
+					<td>Herpes simplex virus type 2 (HSV 2)</td>
+					<td>Vesicular lesions at anogenital area</td>
+					<td>People who have open sores from genital herpes are twice as likely to have HIV</td>
+				</tr>
+				<tr>
+					<td>Genital warts</td>
+					<td>Human pappiloma virus (HPV)</td>
+					<td>Anogenital warts, cervical warts, cervical cancer in women</td>
+					<td>Anal cancer <br>Vaginal cancer</td>
+				</tr>
+				<tr>
+					<td>Viral hepatitis</td>
+					<td>Hepatitis B virus (HBV)</td>
+					<td>Predominantly asymptomatic, nausea, malaise, enlargement of Liver, Jaundice</td>
+					<td>Cirrhosis <br>Liver cancer</td>
+				</tr>
+				<tr>
+					<td>Molluscum contagiosum</td>
+					<td>Molluscum contagiosum virus</td>
+					<td>Umblicaled, skin colored firm nodules, genital or generalized</td>
+					<td>Secondary infections </td>
+				</tr>
+				<tr>
+					<td colspan="3"><strong>Other</strong></td>
+				</tr>
+				<tr>
+					<td>Trichomoniasis</td>
+					<td>Trichomonas vaginalis</td>
+					<td>Asymptomatic; profuse frothy vaginal discharge</td>
+					<td>Increase risk of infected with HIV</td>
+				</tr>
+				<tr>
+					<td>Candidiasis</td>
+					<td>Candida albicans</td>
+					<td>Thick curd like vaginal discharge, vulvar itching or burning</td>
+					<td>Endocarditis <br>Endoophthalmitis</td>
+				</tr>
+				<tr>
+					<td>Scabies</td>
+					<td>Sarcoptes scabei</td>
+					<td>Itchy skin lesions between digits, axilla and buttock area, worsening at night</td>
+					<td>Septicemia </td>
+				</tr>
+			</table>
+		</div>
+
+		<div>
+		    <p>
+		        A patient with STI can present with one of the the seven syndroms. The table will summerize about it.
+		    </p>
+	    </div>
+
+		<div class="table-container">
+		    <table>
+    <tr>
+        <th>Syndrome</th>
+        <th>Symptoms</th>
+        <th>Most Common Causes</th>
+    </tr>
+    <tr>
+        <td>Vaginal discharge</td>
+        <td>Unusual vaginal discharge, vaginal itching, pain during urination</td>
+        <td>
+            Candidiasis<br>
+            Trichomoniasis<br>
+            Bacterial vaginosis<br>
+            Gonorrhea<br>
+            Chlamydia
+        </td>
+    </tr>
+    <tr>
+        <td>Urethral discharge</td>
+        <td>Urethral discharge, pain during urination, frequent urination</td>
+        <td>
+            Gonorrhea<br>
+            Chlamydia
+        </td>
+    </tr>
+    <tr>
+        <td>Genital ulcer</td>
+        <td>Genital sore</td>
+        <td>
+            Syphilis<br>
+            Chancroid<br>
+            Genital herpes
+        </td>
+    </tr>
+    <tr>
+        <td>Lower abdominal pain</td>
+        <td>Lower abdominal pain, pain during sexual intercourse</td>
+        <td>
+            Gonorrhea<br>
+            Chlamydia
+        </td>
+    </tr>
+    <tr>
+        <td>Scrotal swelling</td>
+        <td>Scrotal pain and swelling</td>
+        <td>
+            Gonorrhea<br>
+            Chlamydia
+        </td>
+    </tr>
+    <tr>
+        <td>Inguinal bubo</td>
+        <td>Painful swelling over the groin</td>
+        <td>
+            LGV<br>
+            Chancroid
+        </td>
+    </tr>
+    <tr>
+        <td>Neonatal conjunctivitis</td>
+        <td>Swollen eyelids, discharge, baby cannot open his eyes</td>
+        <td>
+            Gonorrhea<br>
+            Chlamydia
+        </td>
+    </tr>
+</table>
+
+		</div>
+
+
+	</div>
+
+	<!-- END OF STDs -->
+
+	<!-- PREVENTION -->
+	<div class="content" id="prevention">
+		<h1>Prevention</h1>
+		<p>
+			Here is a simple <strong>ABC</strong> approach to STD prevention.
+		</p>
+
+        <h5>A: Abstinence</h5>
+
+        <p>
+            The most effective way to prevent STDs is to abstain from sexual activity, including vaginal, anal, and oral sex. Abstinence eliminates the risk of contracting or transmitting STDs.
+        </p>
+
+       <h5>B: Be Faithful</h5>
+
+        <p>
+            If you are in a mutually monogamous relationship with a partner who has tested negative for STDs, the risk of contracting STDs is significantly reduced. Being faithful and having a committed, long-term relationship with a partner who is also faithful can help prevent the spread of STDs.
+        </p>
+
+        <h5>C: Condom Use</h5>
+
+        <p>
+            Consistent and correct use of condoms can greatly reduce the risk of contracting or transmitting STDs. Condoms act as a barrier and provide protection against many STDs, including HIV, gonorrhea, chlamydia, and syphilis. It's important to use condoms during every sexual encounter, from start to finish, for maximum protection.
+
+            <br>In addition to the ABC approach, it's essential to get tested regularly for STDs, especially if you are sexually active or have multiple partners. Testing allows for early detection, timely treatment, and prevention of further transmission.
+
+            It's also crucial to communicate openly and honestly with your partner(s) about sexual health, STDs, and testing. This helps establish trust and promotes responsible sexual behavior.
+		</p>
+
+	</div>
+	<!-- END OF PREVENTION -->
+
+	<!-- CHATBOT -->
+	<div class="content" id="chatbot">
+		<!-- Your content goes here -->
+		<h1>Chatbot</h1>
+		<p>
+			The chatbot is designed to provide a preliminary diagnosis and is not intended to replace health experts.
+			It is a rule-based chatbot that is built on a designed expert system.
+			<br>
+			The chatbot is anonymous and will
+			not collect any personal information from the user, so users can freely utilize it without worry of their
+			responses being linked to them. To use the chatbot, click the &quot;<strong>Continue to Chatbot</strong>&quot; button below:
+		</p>
+
+		<a id="next-btn" href="/chatbot"><strong>Continue to Chatbot</strong></a>
+		<p style="text-align: center;	margin-top: 2em;"><strong>YOUR PRIVACY IS OUR PRIORITY!!!</strong></p>
+	</div>
+	<!-- END OF CHATBOT -->
+
+	<!-- SURROUNDING -->
+	<div class="content" id="surrounding">
+		<!-- Your content goes here -->
+		<h1>Your Surrounding</h1>
+		<p>
+			A mathematical model was developed based on some assumptions. Data was collected from
+			campus clinic as well as surrounding health centers. Further data from the literature was used to
+			fill missing data to analyze the effects of the parameters. Accordingly, the transmission of STD
+			from the surrounding community is higher than that of the in-campus as well as from health
+			centers transmission. The STD transmission within campus is second higher when compared to
+			the transmission from hospitalized or follow up patients. Hence, students need to be aware and
+			protect themselves by following proper measures, using the “ABC” Approach: Abstinence,
+			Being Faithful, and Using Condoms.
+			The mathematical model developed and the assumptions used can be accessed from the link
+			below:
+		</p>
+
+		<!-- <a id="next-btn" href="/mathematicalModel" target="_blank"><strong>Link To Mathematical Model</strong></a> -->
+		<a id="next-btn" href="/mathematicalModel" target="_blank"><strong>Link To Mathematical Model</strong></a>
+	</div>
+	<!-- END OF SURROUNDING -->
+
+	<!-- SUGGESTUION -->
+	<div class="content" id="suggestion">
+		<!-- Your content goes here -->
+		<h1>Suggested Health Center and Hospitals</h1>
+		<div>
+			<p>
+				The campus clinic is ready to give basic help 24 hours a day, seven days a week. In addition to the
+				campus clinic, the following health centers offer additional screenings, testing and support.
+			</p>
+		</div>
+
+		<div class="locations-container">
+			<div class="locations">
+				<h5>AASTU Clinic</h5>
+				<a href="https://www.google.com/maps/place/AASTU+medical+center/@8.8843641,38.8007695,15z/data=!4m10!1m2!2m1!1saastu+clinic+tulu+dimtu!3m6!1s0x164b8313910c304b:0xa9e34b2f58119854!8m2!3d8.8843636!4d38.811866!15sChdhYXN0dSBjbGluaWMgdHVsdSBkaW10dZIBDm1lZGljYWxfY2VudGVy4AEA!16s%2Fg%2F11k6vcgdnx?entry=ttu"
+					target="_blank"><img src="../static/img/locations/aastu_clinic.JPG" alt="AASTU clinic"></a>
+			</div>
+
+			<div class="locations">
+				<h5>Tirunesh Bejing Hospital</h5>
+				<a href="https://www.google.com/maps/place/Tirunesh+Beijing+General+Hospital/@8.8775038,38.789792,15z/data=!4m2!3m1!1s0x0:0xffdc292ca560705c?sa=X&ved=1t:2428&ictx=111"
+					target="_blank"><img src="../static/img/locations/TBGH.PNG" alt="TBGH"></a>
+			</div>
+
+			<div class="locations">
+				<h5>Milla Clinic</h5>
+				<a href="https://www.google.com/maps/place/Milla+clinic/@8.8557294,38.8115644,15z/data=!4m6!3m5!1s0x164b79534d6c76cf:0x2c8fe8fcc455d71d!8m2!3d8.8557294!4d38.8115644!16s%2Fg%2F11t6mt1fyy?entry=ttu"
+					target="_blank"><img src="../static/img/locations/milla clinic.PNG" alt="milla clinic"></a>
+			</div>
+
+			<div class="locations">
+        	    <a href="https://www.google.com/maps/search/nearest+heatlh+center/"
+        				target="_blank">More</a>
+            </div>
+
+		</div>
+
+	</div>
+
+	<!-- END OF SUGGESTUION -->
+
+	<!-- RESOURCES -->
+	<div class="content" id="resources">
+		<!-- Your content goes here -->
+		<h1>Resources</h1>
+		<p>
+			To provide thorough support and information about sexually transmitted diseases (STDs), we have
+			gathered a range of resources from reliable sources below to help you understand more about
+			prevention, testing, kinds, and other facts.
+		</p>
+
+		<div class="resources">
+			<p>
+				<a href="https://www.prb.org/wp-content/uploads/2020/06/Ethiopia-National-Reproductive-Health-Strategy-2016-2020.pdf"
+					target="_blank">National reproductive health strategy</a>
+
+				<br />
+
+				<a href="https://www.nichd.nih.gov/health/topics/stds/more_information/resources" target="_blank">NIH:
+					Sexually Transmitted Diseases (STDs) Resources</a>
+
+				<br>
+
+				<a href="https://www.cdc.gov/std/default.htm" target="_blank">CDC: Sexually Transmitted Diseases
+					(STDs)</a>
+
+				<br>
+
+				<a href="https://www.who.int/news-room/fact-sheets/detail/sexually-transmitted-infections-(stis)" target="_blank">WHO:
+					Sexually transmitted infections (STIs)</a>
+			</p>
+		</div>
+	</div>
+
+	<!-- END OF RESOURCES -->
+
+	<!-- FEEDBACK -->
+	<div class="content" id="feedback">
+		<h1>Feedback</h1>
+		<p>
+			We value your feedback!
+			Your feedback helps us improve the quality of our STD chatbot service, as well as the other awareness-
+			raising and informational resources on this website. If you have any recommendations for changes, have
+			encountered any problems, or simply want to share your experience, please leave your anonymous
+			comments below.
+		</p>
+
+		<textarea name="feedback" id="feedback-txt" cols="30" rows="4" placeholder="Please enter your feedback here..."
+			oninput="toggleSendFeedbackButton(); feedbackWordLimit();"></textarea>
+		<br>
+		<button class="symptom-button" id="send-btn" onclick="sendFeedback()" disabled><strong>Send</strong></button>
+	</div>
+	<!-- END OF FEEDBACK -->
+
+
+	<footer class="fixed-bottom bg-light footer-container">
+		<div class="container ">
+			<div class="row footer-row">
+				<div class="col-lg">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://www.aastu.edu.et/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/aastu.png') }}" alt="aastu"
+										class="img-fluid"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://africa.ai4d.ai/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/AIforDevt.png') }}"
+										alt="ai for dev't Africa" class="img-fluid"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://hash.theacademy.co.ug/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/Hash.png') }}" alt="hash"
+										class="img-fluid"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://idi.mak.ac.ug/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/IDIandMakerer.png') }}" alt="IDI & Makerer"
+										class="img-fluid"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://www.idrc.ca/en" target="_blank"><img
+										src="{{ url_for('static', filename='/img/IDRCCanada.png') }}" alt="IDRC Canada"
+										class="img-fluid"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://air.ug/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/MakererAILab.png') }}" alt="Makerer AI Lab"
+										class="img-fluid"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://www.sida.se/en/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/Sida.png') }}" alt="Sida"
+										class="img-fluid"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="logo">
+								<a href="https://sunbird.ai/" target="_blank"><img
+										src="{{ url_for('static', filename='/img/SunbirdAI.png') }}" alt="Sunbird AI"
+										class="img-fluid"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row footer-row">
+				<div class="col">
+					<div class="copyright">
+						<p>&#169; <span id="year"></span> Ethio-Hash Project All rights reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- END OF FOOTER -->
+
+	<!-- Bootstrap JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script>
+		document.getElementById("year").textContent = new Date().getFullYear();
+	</script>
+
+	<!-- <script src="{{ url_for('static', filename='/scripts/script.js') }}"></script> -->
+	<script src="../static/scripts/script.js"></script>
+
+	<script>
+		document.getElementById("std").addEventListener("change", function () {
+			var selectedOption = this.value;
+			if (selectedOption === '#std') {
+				console.log('########### hmmmmmmmm')
+				window.location.href = this.value;
+				}
+		});
+	</script>
+
+</body>
+
+</html>
+
