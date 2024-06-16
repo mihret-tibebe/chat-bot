@@ -564,7 +564,7 @@ function handleBackendResponse(data, gender) {
 		// console.log(resultItem.x);
 	});
 
-	let advice = `<br/><br/>Based on these results, it is highly advised to seek medical care promptly. Additionally, please refrain from engaging in sexual activity until you have completed your treatment to prevent further complications and transmission. <br/> For further information about STDs please check <a href="/#std">here</a>`;
+	let advice = `<br/><br/>Based on these results, it is highly advised to seek medical care promptly. Additionally, please refrain from engaging in sexual activity until you have completed your treatment to prevent further complications and transmission. <br/> For further information about STDs please check <a href="/#std">here</a>.`;
 
 	
 	if (countSyndrom == 0) {
