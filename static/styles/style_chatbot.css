@@ -181,6 +181,14 @@ img {
 	border-radius: 5px;
 }
 
+#infoModalBody {
+	/* overflow-x: hidden; */
+	/* Prevent horizontal scrolling in the modal body */
+}
+
+pre {
+	white-space: pre-wrap;
+}
 @media (max-width: 768px) {
 
 	/* chat container */

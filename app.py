@@ -1,11 +1,12 @@
+from mailbox import Message
 from flask import Flask, render_template
 from flask import Flask, request, jsonify, render_template, send_file
-# from flask_sqlalchemy import SQLAlchemy
-from inference_engine import run_expert_system
-# from flask_mail import Mail, Message
-from config import HOST, PORT, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
-# from models import db, Prediction, Syndrom
 from datetime import datetime, timedelta
+from inference_engine import run_expert_system
+from config import HOST, PORT, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
+# from flask_mail import Mail, Message
+# from models import db, Prediction, Syndrom
+# from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, static_folder='static')
 
@@ -88,7 +89,6 @@ def saveToDB(symptoms , response):
 
 @app.route('/feedback', methods=['POST'])
 def sendFeedback():
-    # Your Flask function logic here
     data = request.get_json()
     feedback = data
     print("$"*6, data)
@@ -164,7 +164,6 @@ def predict():
 
 
 # WEEKLY REPORT/////////////////////////////////////////////////////
-# wors without sorting
 
 def get_top_syndromes_last_week(db):
     # Get the date from a week ago
